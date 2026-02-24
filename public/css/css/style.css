@@ -1,0 +1,342 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+   font-family: "Segoe UI", "Helvetica Neue", "Lucida Grande", "Roboto", "Ebrima", "Nirmala UI", "Gadugi", "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", "Tunga", "Lao UI", "Raavi", "Iskoola Pota", "Latha", "Leelawadee", "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math"
+}
+
+body {
+  min-height: 100vh;
+  background-image: url("/photos/Screenshot\ 2026-02-24\ 052759-Photoroom.png");
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  color: #1b1b1b;
+}
+
+.screen {
+  width: 100%;
+  max-width: 560px;
+  padding: 20px;
+}
+
+.card {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 440px;
+    width: calc(100% - 40px);
+    padding: 44px;
+    margin-bottom: 28px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 320px;
+    min-height: 338px;
+    overflow: hidden;
+}
+
+.brand {
+  color: #666;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1;
+  margin-bottom: 24px;
+}
+
+.brand img{
+    width: 30px;
+}
+
+h1 {
+  margin-bottom: 20px;
+    margin-top: -10px !important;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 300;
+    line-height: 1.75rem;
+    padding-bottom: 2.3632px;
+    padding-top: 2.3632px;
+    color: #1b1b1b;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+
+
+h2 {
+    margin-top: -5px !important;
+    color: #1b1b1b;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 0;
+}
+
+.back-link {
+    margin-top: -15px;
+    line-height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  display: inline-block;
+  color: #333;
+  text-decoration: none;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 4px 8px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 32px;
+    height: 2rem;
+    padding: 6px 10px;
+    border-width: 1px;
+    border-color: #666;
+    border-color: rgba(0, 0, 0, 0.6);
+    height: 36px;
+    outline: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    background-color: transparent;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    padding-left: 0;
+}
+
+input::placeholder {
+  color: #666;
+}
+
+.help {
+  margin-top: 10px;
+  color: #2f2f2f;
+  font-size: 13px;
+}
+
+.help a {
+  color: #0067b8;
+  text-decoration: none;
+}
+
+.help a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  color: #e81123;
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+button,
+.button-link {
+    color: #fff;
+    border-color: #0067b8;
+    background-color: #0067b8;
+    display: block;
+    min-height: 32px;
+    border: none;
+    min-width: 108px;
+    line-height: normal;
+    cursor: pointer;
+    
+}
+
+button:hover,
+.button-link:hover {
+  background: #005da4;
+}
+
+.footer-card {
+   margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    max-width: 440px;
+    width: calc(100% - 40px);
+    padding:5px 10px ;
+    margin-bottom: 28px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+   
+    overflow: hidden;
+}
+
+.key-icon {
+  font-size: 30px;
+}
+
+.page-layout{
+  display: none;
+}
+
+@media (max-width: 600px) {
+  body{
+   
+    .screen{
+      display: none;
+    }
+    .page-layout{
+  display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.page-layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.main-wrapper {
+    padding: 44px;
+}
+
+.app-logo img {
+    width: 30px;
+    margin-bottom: 12px;
+}
+
+
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #1b1b1b;
+    margin-bottom: 16px;
+    margin-top: 0px !important;
+}
+
+input[type="email"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #666;
+    padding: 8px 0;
+    font-size: 15px;
+    outline: none;
+    margin-bottom: 12px;
+}
+
+input[type="email"]:focus {
+    border-bottom: 2px solid #0067b8;
+}
+
+.link-info {
+    font-size: 13px;
+    margin-top: 12px;
+}
+
+.link-info a {
+    color: #0067b8;
+    text-decoration: none;
+}
+
+.link-info a:hover {
+    text-decoration: underline;
+}
+
+.alert-message {
+    color: #d92100;
+    font-size: 13px;
+}
+
+.form-btn-area {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 36px;
+}
+
+button {
+    background-color: #0067b8;
+    color: #fff;
+    border: none;
+    padding: 8px 36px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005da3;
+}
+
+.auth-options {
+    margin-top: 24px;
+    border: 1px solid #ccc;
+    padding: 12px 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.auth-options img {
+    width: 24px;
+    margin-right: 12px;
+    filter: opacity(0.6);
+}
+
+.auth-options span {
+    font-size: 15px;
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 12px;
+    left: 20px;
+    display: flex;
+    gap: 24px;
+}
+
+.site-footer a {
+    color: #666;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.site-footer a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.site-footer .more-icon {
+    color: #666;
+    letter-spacing: 2px;
+}
+
+.back-link{
+    margin-top: 0px;
+}
+
+
+  }
+}

