@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const MONGO_URI = process.env.MONGO_URI;
+const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI;
 
 const loginRecordSchema = new mongoose.Schema(
   {
@@ -36,7 +36,7 @@ let dbPromise;
 
 function connectToDatabase() {
   if (!MONGO_URI) {
-    throw new Error("MONGO_URI is missing.");
+    throw new Error("MONGO_URI/MONGODB_URI is missing.");
   }
 
   if (mongoose.connection.readyState === 1) {
