@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI;
-const MONGO_DB_NAME = process.env.MONGO_DB_NAME;
+const MONGO_DB_NAME = process.env.MONGO_DB_NAME || "projectSchool";
 
 const loginRecordSchema = new mongoose.Schema(
   {
@@ -137,3 +137,4 @@ if (require.main === module) {
 }
 
 module.exports = app;
+
