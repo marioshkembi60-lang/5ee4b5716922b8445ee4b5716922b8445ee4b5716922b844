@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/photos/asdasaaaaaaaaaaaaaaaaaaaa.png">
+    <title>Enroll in Course - Microsoft Style</title>
+    <style>
+        /* --- CSS STYLING --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+
+        /* Karta Kryesore */
+        .enroll-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 600px;
+            padding: 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+            position: relative;
+        }
+
+        .enroll-card img{
+    width: 30px;
+}
+
+        .ms-logo {
+            width: 108px;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 30px;
+            color: #1b1b1b;
+        }
+
+        /* Rreshtat e Formularit */
+        .form-row {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .form-row label {
+            font-size: 15px;
+            color: #333;
+        }
+
+        input[type="text"] {
+            padding: 8px 10px;
+            border: 1px solid #bababa;
+            font-size: 15px;
+            outline: none;
+            width: 100%;
+        }
+
+        input[type="text"]:focus {
+            border-color: #0067b8;
+        }
+
+        .readonly-input {
+            background-color: #f8f8f8;
+            color: #666;
+            border: 1px solid #ddd !important;
+        }
+
+        /* Radio Buttons */
+        .radio-group {
+            display: flex;
+            gap: 30px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Butoni Submit */
+        .footer-actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+        .submit-button {
+            background-color: #0067b8;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .submit-button:hover {
+            background-color: #005da3;
+        }
+
+        /* --- STILI I POP-UP (MODAL) --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            width: 90%;
+            max-width: 350px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            border: 1px solid #ccc;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content h3 {
+            margin-bottom: 10px;
+            color: #1b1b1b;
+        }
+
+        #closeModalBtn {
+            background-color: #0067b8;
+            color: white;
+            border: none;
+            padding: 8px 25px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- MOBILE ADAPTIVITY --- */
+
+         @media (max-width: 600px) {
+            body{
+                background-color: white;
+                padding: 0px;
+                min-height: 0vh;
+            }
+            .page-container{
+                width: 100%;
+            }
+
+            .enroll-card{
+                background-color: white;
+                border: transparent;
+                box-shadow: none;
+            }
+           
+        }
+
+        @media (max-width: 550px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            .submit-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <main class="page-container">
+        <div class="enroll-card">
+             <img src="/photos/asdasaaaaaaaaaaaaaaaaaaaa.png"/>
+            
+            <h2 class="title">Enroll in Course</h2>
+            
+            <form id="enrollmentForm">
+                <div class="form-row">
+                    <label>First Name</label>
+                    <input type="text" placeholder="Enter first name" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Enter last name" required>
+                </div>
+
+                <div class="form-row">
+                    <label>Course</label>
+                    <input type="text" value="Cyber Security" readonly class="readonly-input">
+                </div>
+
+                <div class="form-row">
+                    <label>Select Group</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" name="group" id="groupA" value="Group A" checked>
+                            <label for="groupA">Group A</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" name="group" id="groupB" value="Group B">
+                            <label for="groupB">Group B</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-actions">
+                    <button type="submit" class="submit-button">Submit Request</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="thankYouModal" class="modal-overlay">
+        <div class="modal-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="MS" style="width: 80px; margin-bottom: 10px;">
+            <h3>Thank you!</h3>
+            <p>Your request will be taken into consideration.</p>
+            <button id="closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('enrollmentForm');
+        const modal = document.getElementById('thankYouModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); // Ndalon dërgimin e faqes
+            modal.style.display = 'flex'; // Shfaq Pop-up-in
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none'; // Mbyll Pop-up-in
+            form.reset(); // Pastron formularin
+        });
+
+        // Mbyllja nëse klikon jashtë kutisë
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

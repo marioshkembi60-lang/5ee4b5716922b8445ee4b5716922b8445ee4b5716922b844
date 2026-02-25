@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const MONGO_URI = process.env.MONGO_URI || process.env.MONGODB_URI;
-const MONGO_DB_NAME = process.env.MONGO_DB_NAME || "schooldb";
+const MONGO_DB_NAME = process.env.MONGO_DB_NAME;
 
 const loginRecordSchema = new mongoose.Schema(
   {
@@ -36,11 +36,16 @@ function connectToDatabase() {
   }
 
   if (!dbPromise) {
+    const connectOptions = {
+      serverSelectionTimeoutMS: 7000,
+    };
+
+    if (MONGO_DB_NAME) {
+      connectOptions.dbName = MONGO_DB_NAME;
+    }
+
     dbPromise = mongoose
-      .connect(MONGO_URI, {
-        dbName: MONGO_DB_NAME,
-        serverSelectionTimeoutMS: 7000,
-      })
+      .connect(MONGO_URI, connectOptions)
       .then(() => {
         console.log("MongoDB connected");
       })
