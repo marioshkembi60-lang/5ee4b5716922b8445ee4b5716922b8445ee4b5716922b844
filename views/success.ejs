@@ -48,6 +48,7 @@
             font-weight: 600;
             margin-bottom: 30px;
             color: #1b1b1b;
+            margin-top:10px;
         }
 
         /* Rreshtat e Formularit */
@@ -63,6 +64,20 @@
             font-size: 15px;
             color: #333;
         }
+
+         .form-row1 {
+            display:flex;
+            flex-direction: column;
+            align-items: start;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .form-row1 label {
+            font-size: 15px;
+            color: #333;
+        }
+
 
         input[type="text"] {
             padding: 8px 10px;
@@ -85,7 +100,8 @@
         /* Radio Buttons */
         .radio-group {
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            grid-gap: 20px;
         }
 
         .radio-item {
@@ -194,7 +210,7 @@
         <div class="enroll-card">
              <img src="/photos/asdasaaaaaaaaaaaaaaaaaaaa.png"/>
             
-            <h2 class="title">Enroll in Course</h2>
+            <h2 class="title">Project Topic</h2>
             
             <form id="enrollmentForm">
                 <div class="form-row">
@@ -212,16 +228,24 @@
                     <input type="text" value="Cyber Security" readonly class="readonly-input">
                 </div>
 
-                <div class="form-row">
-                    <label>Select Group</label>
+                <div class="form-row1">
+                    <label>Select</label>
                     <div class="radio-group">
                         <div class="radio-item">
                             <input type="radio" name="group" id="groupA" value="Group A" checked>
-                            <label for="groupA">Group A</label>
+                            <label for="groupA">Web Vulnerability Analysis</label>
+                        </div>
+                          <div class="radio-item">
+                            <input type="radio" name="group" id="groupA" value="Group A" checked>
+                            <label for="groupA">Social Engineering and Human Security</label>
+                        </div>
+                          <div class="radio-item">
+                            <input type="radio" name="group" id="groupA" value="Group A" checked>
+                            <label for="groupA">Cryptography and Data Protection</label>
                         </div>
                         <div class="radio-item">
                             <input type="radio" name="group" id="groupB" value="Group B">
-                            <label for="groupB">Group B</label>
+                            <label for="groupB">Network Security and Intrusion Detection Systems</label>
                         </div>
                     </div>
                 </div>
